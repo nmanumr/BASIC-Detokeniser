@@ -10,6 +10,7 @@ declare var electron: any;
 export class ToolbarComponent implements OnInit {
 
   private dialog = electron.remote.dialog;
+  private currentWindow =  electron.remote.getCurrentWindow()
 
   constructor(private fileService :FilesService) { }
 
@@ -17,6 +18,20 @@ export class ToolbarComponent implements OnInit {
   }
 
   public addfiles(){
+    var paths = this.dialog.showOpenDialog(this.currentWindow, {
+      properties: ['openDirectory', 'showHiddenFiles', 'createDirectory']
+    });
+    if (paths[0]) {
+      this.fileService.changeOutpath(index, paths[0])
+    }
+  }
 
+  public addfolder(){
+    var paths = this.dialog.showOpenDialog(this.currentWindow, {
+      properties: ['openDirectory', 'showHiddenFiles', 'createDirectory']
+    });
+    if (paths[0]) {
+      console.log(paths[0]);
+    }
   }
 }
