@@ -1,0 +1,51 @@
+<div class="toolbar-container">
+
+    <button class="green small-btn" mdTooltip="Add files" (click)="addfiles()">
+        <i class="material-icons">add</i>
+    </button>
+
+    <button mdTooltip="Add folder" class="small-btn" (click)="addfolder()">
+        <i class="material-icons" style="color: #00796b">create_new_folder</i>
+    </button>
+
+    <div class="divider">
+        <span>|</span>
+    </div>
+
+    <button mdTooltip="Select All" class="small-btn">
+        <i class="material-icons">select_all</i>
+    </button>
+
+    <button mdTooltip="Select None" class="small-btn">
+        <i class="material-icons">border_clear</i>
+    </button>
+
+    <button mdTooltip="Select None" class="small-btn">
+        <i class="material-icons">flip_to_back</i>
+    </button>
+
+    <!--<button [mdMenuTriggerFor]="menu" class="drop-down">
+      <span>Syntax</span><i class="material-icons">arrow_drop_down</i>
+    </button>
+    <md-menu #menu="mdMenu">
+        <button md-menu-item>Advanced</button>
+        <button md-menu-item>PC-jr</button>
+        <button md-menu-item>Tandy</button>
+    </md-menu>-->
+
+    <div class="divider">
+        <span>|</span>
+    </div>
+
+    <button class="drop-down">
+      <i class="material-icons teal" style="margin-right: 8px;">playlist_play</i><span>Convert All</span>
+    </button>
+    <button class="drop-down">
+      <i class="material-icons teal" style="margin-right: 8px;">playlist_add_check</i><span>Convert Selected</span>
+    </button>
+
+    <div class="divider">
+        <span>|</span>
+    </div>
+
+</div>

@@ -7,12 +7,13 @@
 }
 
 .window__titlebar {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     overflow: hidden;
     text-align: center;
     top: 0;
     left: 0;
     right: 0;
-    height: 32px;
+    height: 38px;
     cursor: default;
     background-color: rgba(200, 200, 200, 0.4);
 }
@@ -29,7 +30,7 @@
 
 .window__title {
     position: relative;
-    line-height: 32px;
+    line-height: 38px;
     z-index: 10;
     color: rgba(0, 0, 0, 0.75);
 }
@@ -39,15 +40,15 @@
     top: 0;
     bottom: 0;
     z-index: 10;
-    height: 32px;
+    height: 38px;
 }
 
 .window__controls>span {
     display: block;
     float: left;
-    height: 32px;
+    height: 38px;
     width: 32px;
-    line-height: 32px;
+    line-height: 38px;
     font-size: 12px;
     transition: all 100ms;
     cursor: default;
@@ -100,6 +101,8 @@ footer {
 #holder {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 .drop-wrapper,
@@ -108,23 +111,199 @@ footer {
 }
 
 .drop-wrapper {
-    padding: 32px;
     color: rgba(88, 88, 88, 0.6);
     text-align: center;
-    background-color: #fafbfc;
-    border: 1px solid #e1e4e8;
-    border-radius: 3px;
-    box-shadow: inset 0 0 10px rgba(27, 31, 35, 0.05);
     margin-top: 10px;
     margin-left: 10px;
     display: block;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    width: calc(100% - 20px);
+    width: calc(100% - 20px)!important;
     height: 200px;
-    padding: 5px 10px;
+    max-height: 200px;
+    flex: 0 0 auto;
     font-size: 14px;
     line-height: 22px;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.files {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.window {
+    background-color: #eee;
+}
+
+#products.mdl-data-tabledynamic {
+    width: 100%;
+}
+
+.mdl-data-tabledynamic {
+    overflow: visible !important;
+}
+
+.mdl-data-tabledynamic__title {
+    width: 100%;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #000;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
+    line-height: normal;
+    -webkit-perspective-origin: 165px 56px;
+    perspective-origin: 165px 56px;
+    -webkit-transform-origin: 165px 56px;
+    transform-origin: 165px 56px;
+    box-sizing: border-box;
+    display: block;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+.mdl-data-tabledynamic {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    width: 330px;
+    z-index: 1;
+    position: relative;
+    background: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.mdl-data-tabledynamic__title-text,
+.h2.mdl-data-tabledynamic__title-text {
+    float: left;
+    font-weight: 400 !important;
+}
+
+.mdl-data-tabledynamic__title-text {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    color: inherit;
+    display: block;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+    overflow: hidden;
+    -webkit-transform-origin: 149px 48px;
+    transform-origin: 149px 48px;
+    margin: 0;
+}
+
+.mdl-data-tabledynamic__actions {
+    float: right;
+    margin-right: 12px;
+}
+
+.mdl-data-tabledynamic__actions .mdl-button {
+    min-width: 45px;
+    padding: 0 10px;
+}
+
+.mdl-data-tabledynamic__content {
+    overflow: visible !important;
+    color: rgba(0, 0, 0, .54);
+    font-size: 1rem;
+    line-height: 18px;
+    padding: 0;
+    width: 100%;
+}
+
+.mdl-data-tabledynamic__content .mdl-data-table {
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+}
+
+.mdl-data-tabledynamic__content .mdl-data-table {
+    box-shadow: none !important;
+}
+
+.mdl-data-table .mdl-data-table__label {
+    font-weight: 500;
+    color: #AFAFAF;
+}
+
+.mdl-data-table tr.is-selected .mdl-data-table__label {
+    font-weight: 500;
+    color: rgba(0, 0, 0, .45) !important;
+}
+
+.mdl-dialog__addContent .mdl-dialog__actions {
+    padding-top: 0;
+}
+
+.mdl-dialog__addContent {
+    text-align: left;
+    width: 320px;
+    height: 180px;
+    display: block;
+    position: absolute;
+    background: #fafafa;
+    margin-top: -14px;
+    z-index: 99;
+}
+
+.mdl-dialog__addContent .mdl-dialog__title {
+    color: #1f1f1f !important;
+    font-size: 22px !important;
+    font-weight: 500;
+}
+
+.mdl-dialog__addContent .mdl-dialog__content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.add-table-content:hover {
+    color: #60c7cd;
+    cursor: pointer;
+}
+
+main#ty-container>.mdl-grid:first-child {
+    width: 1000px !important;
+    max-width: inherit;
+}
+
+main#ty-container #addCustomerAction {
+    width: 100% !important;
+    max-width: inherit;
+}
+
+.mdl-button-group {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mdl-button-group button {
+    background-color: #eee;
+    display: inline-block;
+    float: left;
+    margin: 0px;
+    box-shadow: none;
+    border-radius: 0px;
 }

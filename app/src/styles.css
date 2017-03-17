@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-left: 1px solid #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 39%, .4)
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 39%, .6)
+}

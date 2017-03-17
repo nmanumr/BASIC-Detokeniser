@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FileConverter</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./assets/css/material-icons.css">
+    <link rel="stylesheet" href="./assets/css/photon.min.css">
+    <style>
+        *:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <app-root>Loading...</app-root>
+
+
+    <script>
+        var electron = require('electron');
+
+        // prevent file opening on file drop
+        var div = document.getElementsByTagName('body')[0];
+        div.ondragover = () => {
+            return false;
+        }
+        div.ondragleave = div.ondragend = () => {
+            return false;
+        }
+        div.ondrop = (e) => {
+            return false;
+        }
+    </script>
+</body>
+
+</html>

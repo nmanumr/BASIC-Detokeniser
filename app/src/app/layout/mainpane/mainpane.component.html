@@ -1,0 +1,27 @@
+<div class="main-pane">
+    <div style="display: table-cell; vertical-align: middle;" *ngIf="files.length < 1">
+        <i class="icon icon-download" style="font-size: 72px; color: rgba(0,0,0,0.1)"></i>
+        <p style="color: rgba(0,0,0,0.5)">
+            Drop your <b>Files</b> or <b>Folder</b> here <br> to convert from <b>Tokenised</b> or <b>Protected</b> Format
+        </p>
+    </div>
+
+    <md-list style="overflow: auto;height: 100%;" *ngIf="files.length != 0" class="list">
+        <h3 md-subheader>Files</h3>
+        <md-list-item *ngFor="let file of files" class="files-list" [ngClass]="{'selected': file.selected }">
+            <md-icon md-list-avatar class="file-icon" *ngIf="!file.selected" mdTooltip="Click to select" (click)="select(file)">insert_drive_file</md-icon>
+            <md-icon md-list-avatar class="file-icon" *ngIf="file.selected" (click)="select(file)">check_box</md-icon>
+            <h4 md-line (click)="select(file)">{{file.name}}</h4>
+            <md-progress-bar mode="determinate" md-line (click)="select(file)" *ngIf="file.status == 'c'"></md-progress-bar>
+            <p md-line (click)="select(file)" class="path" title="{{file.path}}"> {{file.path}} </p>
+            <button class="action-btn" [mdTooltip]="'Syntax - ' +file.syntax " [mdMenuTriggerFor]="syntaxMenu"><md-icon>code</md-icon></button>
+            <md-menu #syntaxMenu="mdMenu">
+                <button md-menu-item (click)="changeSyntax(file, 'Advance')"> Advance </button>
+                <button md-menu-item (click)="changeSyntax(file, 'Pc jr')"> Pc jr </button>
+                <button md-menu-item (click)="changeSyntax(file, 'Tandy')"> Tandy </button>
+            </md-menu>
+            <button class="action-btn" mdTooltip="Output Folder" (click)="changePath(file)"><md-icon>unarchive</md-icon></button>
+            <button (click)="clear(file, $event)" class="action-btn" mdTooltip="Remove"><md-icon>clear</md-icon></button>
+        </md-list-item>
+    </md-list>
+</div>
