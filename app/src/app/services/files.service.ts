@@ -30,11 +30,37 @@ export class FilesService {
   }
 
   public removeFile(index: number){
+    console.log(index);
     this.files.splice(index, 1);
   }
 
-  public convert(index){
+  public removeSelected(): number{
+    var deleted =0;
+    console.log(this.files.length);
+    console.log(this.files);
+    for (var i =0; i< this.files.length; i++) {
+      if (this.files[i].selected) {
+        var index = this.files.indexOf(this.files[i]);
+        this.removeFile(index);
+        i--;
+        deleted++;
+      }
+    }
+    return deleted;
+  }
 
+  public removeCompleted(){
+    for (var i =0; i< this.files.length; i++) {
+        if (this.files[i].status == "done") {
+          var index = this.files.indexOf(this.files[i]);
+          this.removeFile(index);
+          i--;
+        }
+      }
+  }
+
+  public convert(index){
+    // TODO: convert file
   }
 
   public convertSelected(){
@@ -45,26 +71,21 @@ export class FilesService {
     
   }
 
-
-
   private getFileNameWithExt(path: string): string {
     return this.getFileName(path) + '.' + this.getFileExt(path);
   }
 
   private getFolderPath(path: string): string {
-    console.log(path, typeof(path));
     var index = path.lastIndexOf('\\');
     return path.substr(0, index + 1);
   }
 
   private getFileExt(path: string): string {
-    console.log(path, typeof(path));
     var index = path.lastIndexOf('.');
     return path.slice(index + 1 - path.length);
   }
 
   private getFileName(path: string): string {
-    console.log(path, typeof(path));
     var index = path.lastIndexOf('\\');
     return path.slice(index + 1 - path.length).replace('.' + this.getFileExt(path), '');
   }
@@ -76,5 +97,5 @@ export class file {
   outputPath: string;
   syntax: "Tandy" | "Pc jr" | "Advance";
   selected: boolean;
-  status: 'convering' | 'pending' | 'done'
+  status: 'converting' | 'pending' | 'done'
 }

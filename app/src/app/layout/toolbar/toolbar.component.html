@@ -12,26 +12,25 @@
         <span>|</span>
     </div>
 
-    <button mdTooltip="Select All" class="small-btn">
+    <button mdTooltip="Select All" class="small-btn" (click)="select('a')">
         <i class="material-icons">select_all</i>
     </button>
 
-    <button mdTooltip="Select None" class="small-btn">
+    <button mdTooltip="Select None" class="small-btn" (click)="select('n')">
         <i class="material-icons">border_clear</i>
     </button>
 
-    <button mdTooltip="Select None" class="small-btn">
+    <button mdTooltip="Select Invert" class="small-btn" (click)="select('i')">
         <i class="material-icons">flip_to_back</i>
     </button>
 
-    <!--<button [mdMenuTriggerFor]="menu" class="drop-down">
-      <span>Syntax</span><i class="material-icons">arrow_drop_down</i>
+    <div class="divider">
+        <span>|</span>
+    </div>
+
+    <button mdTooltip="Remove Completed or Selected" class="small-btn" (click)="delete()">
+        <i class="material-icons">delete</i>
     </button>
-    <md-menu #menu="mdMenu">
-        <button md-menu-item>Advanced</button>
-        <button md-menu-item>PC-jr</button>
-        <button md-menu-item>Tandy</button>
-    </md-menu>-->
 
     <div class="divider">
         <span>|</span>
